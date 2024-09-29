@@ -35,6 +35,8 @@ const submitTransaction = async (req, res) => {
         // Step 4: Update the user with the transactionid and qrCode
         user.transactionid = transactionid;
         user.qrcode = qrCodeData;
+        user.entry = 'false';
+        
 
         await user.save();
 

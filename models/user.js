@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   currentyear : { type: String},
   transactionid : { type: String},
   qrcode : { type: String},
+  entry : { type: String},
 });
 
 module.exports = mongoose.model('User', userSchema,'StudentDatabase');
