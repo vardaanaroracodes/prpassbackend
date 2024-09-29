@@ -53,7 +53,8 @@ const verifyToken = (req, res, next) => {
 // Routes
 app.use('/api/auth', require('./routes/auth')); // Your existing auth routes
 app.use('/api/transaction',verifyToken,require('./routes/transaction')); // Your existing transaction routes
-
+app.use('/api/passes',require('./routes/passapproval'));
+app.use('/api/passes',require('./routes/passverify'));
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
