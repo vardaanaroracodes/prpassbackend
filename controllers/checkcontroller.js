@@ -19,6 +19,9 @@ exports.check = async (req, res) => {
         if (!user) {
             return res.status(400).json({ msg: 'Invalid HallTicket Number' });
         }
+        if(user.transactionid){
+            return res.status(400).json({ msg: 'Pass Already Purchased' });
+        }
         
         // Extract only the first 5 digits of the parent's phone number
         const truncatedParentPhone = user.parentphone.slice(0, 5);
