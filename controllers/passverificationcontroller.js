@@ -28,7 +28,7 @@ const CheckEntry = async (req,res)=>{
             decrypted = decipher.update(encryptedText, 'hex', 'utf8');
             decrypted += decipher.final('utf8');
           } catch (error) {
-            console.error('Decryption failed');
+            // console.error('Decryption failed');
             return res.status(500).json({ error: 'Invalid QR' });
         }
         //Checking mongo for the entry of the pass holder

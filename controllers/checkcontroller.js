@@ -22,7 +22,7 @@ exports.check = async (req, res) => {
             return res.status(400).json({ msg: 'Pass Already Purchased' });
         }
         // Checking the count of passes and limiting it 
-        
+
         const year=user.currentyear;
         const count= await User.countDocuments({
             currentyear: year,  
@@ -45,7 +45,7 @@ exports.check = async (req, res) => {
         // Return the firstname and truncated parent's phone number
         res.status(200).json({ firstname: user.firstname, parentphone: truncatedParentPhone });
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         res.status(500).send('Server Error');
     }
 }

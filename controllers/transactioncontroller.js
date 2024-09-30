@@ -5,9 +5,9 @@ const User = require('../models/user');
 // Controller function to handle the transaction and QR code generation
 const submitTransaction = async (req, res) => {
     const { transactionid } = req.body;
-    console.log(req.user);
+    // console.log(req.user);
     hallticketno = req.user.hallticketno;
-    console.log(hallticketno, transactionid);
+    // console.log(hallticketno, transactionid);
     try {
         // Step 1: Find the user by hallticketno in the database
         const user = await User.findOne({ hallticketno });
@@ -43,7 +43,7 @@ const submitTransaction = async (req, res) => {
         // Step 5: Send the QR code as a response
         res.json({ message: 'Transaction saved and QR code generated', qrCode: qrCodeData });
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         res.status(500).json({ error: 'Failed to save transaction or generate QR code' });
     }
 };
