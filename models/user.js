@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
   firstname: { type: String},
   hallticketno: { type: String, required: true, unique: true },
   parentphone: { type: String, required: true },
-  currentyear : { type: String},
+  currentyear : { type: Number},
   transactionid : { type: String},
   qrcode : { type: String},
   entry : { type: String},
