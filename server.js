@@ -15,7 +15,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000', // Change to the actual URL of your frontend
+  origin: ['http://localhost:3000','https://www.prkmit.in'], // Change to the actual URL of your frontend
   credentials: true, // Allow credentials (cookies) to be sent
 }));
 app.use(helmet());
