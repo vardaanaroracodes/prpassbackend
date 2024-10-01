@@ -20,7 +20,11 @@ exports.login = async (req, res) => {
     if (!user) {
       return res.status(400).json({ msg: 'User Not Found' });
     }
-
+    const batch = 3;
+    const useryear = user.currentyear;
+    if(useryear !== batch){
+      return res.status(400).json({ msg: 'Passes for your year are currently on hold' });
+    }
     // Check if the last 4 digits of the parent's phone number match
     const lastFourDigits = user.parentphone.slice(-4);
     if (lastFourDigits !== parentphone) {

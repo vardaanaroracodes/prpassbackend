@@ -57,4 +57,4 @@ app.use('/api/passes',require('./routes/passapproval'));
 app.use('/api/passes',require('./routes/passverify'));
 
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT} at http://localhost:${PORT}`));

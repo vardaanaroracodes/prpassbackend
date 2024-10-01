@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   transactionid : { type: String},
   qrcode : { type: String},
   entry : { type: String},
-});
+},
+{timestamps: true});
 
 module.exports = mongoose.model('User', userSchema,'StudentDatabase');
