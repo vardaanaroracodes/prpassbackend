@@ -24,7 +24,7 @@ app.use(cookieParser()); // Use cookie-parser to read cookies
 // Rate Limiting to Prevent Brute Force Attacks
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // Limit each IP to 5 login attempts per window
+  max: 500, // Limit each IP to 5 login attempts per window
   message: 'Too many login attempts, please try again later.',
 });
 app.use('/api/auth/login', loginLimiter);
