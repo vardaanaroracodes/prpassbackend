@@ -20,7 +20,7 @@ exports.login = async (req, res) => {
     if (!user) {
       return res.status(400).json({ msg: 'User Not Found' });
     }
-    const batch = 4;
+    const batch = 1;
     const useryear = user.currentyear;
     if(useryear !== batch){
       return res.status(400).json({ msg: 'Passes for your year are currently on hold' });
