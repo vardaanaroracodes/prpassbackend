@@ -40,9 +40,9 @@ const verifyToken = (req, res, next) => {
 
   // Verify the token
   try {
-    console.log(token);
+    // console.log(token);
     const decoded = jwt.verify(token.slice(7), process.env.JWT_SECRET);
-    console.log(decoded);
+    // console.log(decoded);
     req.user = decoded.user;
     next();
   } catch (error) {
