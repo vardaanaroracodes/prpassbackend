@@ -33,6 +33,9 @@ const submitTransaction = async (req, res) => {
         const qrCodeData = await QRCode.toDataURL(encryptedData);
         
         // Step 4: Update the user with the transactionid and qrCode
+        if (!transactionid || transactionid.length < 12) {
+            return res.status(400).json({ error: 'Invalid or missing transaction ID' });
+        }
         user.transactionid = transactionid;
         user.qrcode = qrCodeData;
         user.entry = 'false';
