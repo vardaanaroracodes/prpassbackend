@@ -34,8 +34,8 @@ exports.check = async (req, res) => {
         
         // Code for batchwise distribution change batch when required
 
-        const batch=1; //change here
-        if(user.currentyear!=batch){
+        const batch=[2,3]; //change here
+        if(!batch.includes(user.currentyear)){
             return res.status(400).json({ msg: 'Passes for your year are currently on hold' });
         }
 
