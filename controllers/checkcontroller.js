@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 const User = require('../models/user'); // Assuming User is your Mongoose model
-const limit=[470,425,320,470]; //475 375 375 475
+const limit=[500,455,330,415]; //475 375 375 475
 // User check endpoint
 exports.check = async (req, res) => {
     // Validate the input
@@ -34,7 +34,7 @@ exports.check = async (req, res) => {
         
         // Code for batchwise distribution change batch when required
 
-        const batch=[2,3,4]; //change here
+        const batch=[1,2,3,4]; //change here
         if(!batch.includes(user.currentyear)){
             return res.status(400).json({ msg: 'Passes for your year are currently on hold' });
         }
