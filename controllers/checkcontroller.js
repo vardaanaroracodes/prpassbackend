@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 const User = require('../models/user'); // Assuming User is your Mongoose model
-const limit=[500,455,330,415]; //475 375 375 475
+const limit=[0,0,0,0]; //475 375 375 475
 // User check endpoint
 exports.check = async (req, res) => {
     // Validate the input
