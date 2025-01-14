@@ -103,9 +103,9 @@ ENCRYPTION_KEY=your_32_character_encryption_key
 ## Usage
 
 1. Start the server:
-bash
+```
 npm start
-
+```
 
 2. The server will run at `http://localhost:5001`
 
